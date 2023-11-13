@@ -1,0 +1,65 @@
+﻿@model IEnumerable<StanceNation_1.Models.EventsModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.eventDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventPrice2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventPrice2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventTime)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.eventName">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.eventName">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.eventName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
