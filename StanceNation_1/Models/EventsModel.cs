@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.SqlTypes;
 
 namespace StanceNation_1.Models
 {
@@ -6,11 +8,15 @@ namespace StanceNation_1.Models
     {
         [Key]
         public string eventName { get; set; }
-        public string eventDate { get; set; }
-        public byte[] eventImage { get; set; }
+        public DateTime eventDate { get; set; }
+        public string eventImage { get; set; }
         public string eventLocation { get; set; } 
         public string eventPrice { get; set; }
         public string eventPrice2 { get; set; }
-        public string eventTime { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Upload Image")]
+        
+        public IFormFile ImageFile { get; set; }
     }
 }

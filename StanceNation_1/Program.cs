@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StanceNation_1.Data;
+using Microsoft.AspNetCore.Identity;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,10 @@ builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<dbContext>(options => options.UseSqlServer(connectionString));
+
+
+
+
 var app = builder.Build();
 
 

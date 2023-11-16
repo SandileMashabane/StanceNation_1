@@ -8,6 +8,10 @@
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/st10099963/databases/DAF",
       "type": "mssql.azure",
       "connectionId": "stancenation"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:StanceNation_1ContextConnection"
     }
   }
 }

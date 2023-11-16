@@ -1,0 +1,20 @@
+﻿@model IEnumerable<StanceNation_1.Models.EventsModel>
+<center><h1 class="underline">Upcoming Events</h1></center><br><br>
+
+@foreach (var item in Model)
+{
+    
+    <div class="mid-div">
+        <div class="image-container_">
+            <img src="data:image/jpg;base64,@item.eventImage" width="500px" height="500px" />
+        </div>
+        <div class="text-container_" style="background-color:#708090">
+            <h2>Event Name: @Html.DisplayFor(modelItem => item.eventName)</h2>
+            <h3>Event Location: @Html.DisplayFor(modelItem => item.eventLocation)</h3>
+            <h4>Event Date: @Html.DisplayFor(modelItem => item.eventDate)</h4>
+            <h5>Viewing Price(R): @Html.DisplayFor(modelItem => item.eventPrice)</h5>
+            <h5>Participating Price(R): @Html.DisplayFor(modelItem => item.eventPrice2)</h5>
+        </div>
+    </div>
+    <div class="dotted-line"></div>
+}

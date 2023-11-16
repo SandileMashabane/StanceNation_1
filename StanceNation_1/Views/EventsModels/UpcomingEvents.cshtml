@@ -1,0 +1,102 @@
+﻿@using Microsoft.AspNetCore.Mvc.RazorPages;
+@using Microsoft.AspNetCore.Http;
+
+@model IEnumerable<StanceNation_1.Models.EventsModel>
+@{
+    var isValidUser = false;
+
+    if (Context.Request.Method == "POST" && Context.Request.HasFormContentType)
+    {
+        var username = Context.Request.Form["username"];
+        var password = Context.Request.Form["password"];
+
+        // Check if the username and password are correct
+        isValidUser = username == "StanceNationAdmin1" && password == "12345";
+        
+    }
+}
+@if (isValidUser){
+
+    ViewData["Title"] = "UpcomingEvents";
+    <h1>UpcomingEvents</h1>
+
+    <p>
+        <a asp-action="Events">Add New Event</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.eventName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eventDate)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.eventLocation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eventPrice)<p>(R)</p>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eventPrice2)<p>(R)</p>
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.eventImage)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eventName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eventDate)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eventLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eventPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eventPrice2)
+                    </td>
+
+                    <td>
+                        <img src="data:image/jpg;base64,@item.eventImage" width="125px" height="125px"></img>
+                    </td>
+                    <td>
+
+                        <a asp-action="Details" asp-route-id="@item.eventName">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.eventName">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+else
+{
+ <h1>Employee Login</h1>
+    <form method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required />
+
+        <input type="submit" value="Login" />
+    </form>   
+}
+
+
+

@@ -6,6 +6,10 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "stancenation"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:StanceNation_1ContextConnection"
     }
   }
 }

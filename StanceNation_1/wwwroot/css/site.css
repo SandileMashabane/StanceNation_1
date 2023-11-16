@@ -89,6 +89,14 @@ h1, h2, h3 {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.mid-div_ {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    
 }
 
 .image {
@@ -160,6 +168,13 @@ nav a {
     transform: translateY(0); 
 }
 
+.image-container_ {
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.text-container_ {
+    flex: 1;
+}
 
 
 
