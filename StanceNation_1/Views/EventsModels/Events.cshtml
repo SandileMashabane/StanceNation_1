@@ -15,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="eventName" class="control-label"></label>
-                <input asp-for="eventName" class="form-control" />
+                <input asp-for="eventName" class="form-control" minlength="5" />
                 <span asp-validation-for="eventName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,12 +35,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="eventPrice" class="control-label"></label>
-                <input asp-for="eventPrice" class="form-control" />
+                <input asp-for="eventPrice" type="number" class="form-control" />
                 <span asp-validation-for="eventPrice" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="eventPrice2" class="control-label"></label>
-                <input asp-for="eventPrice2" class="form-control" />
+                <input asp-for="eventPrice2" type="number" class="form-control" />
                 <span asp-validation-for="eventPrice2" class="text-danger"></span>
             </div>
             <div class="form-group">
